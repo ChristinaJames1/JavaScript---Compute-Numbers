@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Sum Calculator</title>
+</head>
+<body>
+
+  <h2 id="sumResult"></h2>
+  <h2 id="squareResult"></h2>
+
+  <script>
+    // Sum from 1 to 10
+    let sum = 0;
+    for (let i = 1; i <= 10; i++) {
+      sum += i;
+    }
+
+    const sumMessage = `Sum of numbers from 1 to 10 is: ${sum}`;
+    console.log(sumMessage);
+    document.getElementById('sumResult').textContent = sumMessage;
+
+    // Prompt user input
+    const n1 = parseInt(prompt("Enter the first number (N1):"));
+    const n2 = parseInt(prompt("Enter the second number (N2):"));
+
+    let output = document.getElementById('squareResult');
+
+    if (isNaN(n1) || isNaN(n2)) {
+      const msg = "Please enter valid numbers.";
+      console.log(msg);
+      output.textContent = msg;
+    } else if (n1 > n2) {
+      const msg = "First number should be less than or equal to the second.";
+      console.log(msg);
+      output.textContent = msg;
+    } else {
+      let squareSum = 0;
+      for (let i = n1; i <= n2; i++) {
+        squareSum += i * i;
+      }
+
+      const msg = `Sum of numbers squared from ${n1} to ${n2} is: ${squareSum}`;
+      console.log(msg);
+      output.textContent = msg;
+    }
+  </script>
+
+</body>
+</html>
